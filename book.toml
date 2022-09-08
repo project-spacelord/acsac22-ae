@@ -1,0 +1,6 @@
+# mdbook: https://github.com/rust-lang/mdBook
+[book]
+language = "en"
+multilingual = false
+src = "doc-src"
+title = "Spacelord Artifact Evaluation"
