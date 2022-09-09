@@ -1,11 +1,8 @@
 # Summary
 
-[Introduction](./introduction.md)
-
-- [Preparation](./preparation.md)
-    - [U-Boot Image](./u-boot.md)
-    - [User Token](./user-token.md)
-    - [Linux OS image](./os.md)
+- [Preparation](./introduction.md)
+    - [Hub Image](./hub.md)
+    - [User token & OS image](./user-token.md)
     - [ESP32 Peripheral](./esp32.md)
-    - [Server Setup](./server.md)
+    - [Web Server](./server.md)
 - [Testing](./testing.md)
