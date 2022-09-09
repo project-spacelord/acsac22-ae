@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="preparation.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u-boot.html"><strong aria-hidden="true">1.1.</strong> U-Boot Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User Token</a></li><li class="chapter-item expanded "><a href="os.html"><strong aria-hidden="true">1.3.</strong> Linux OS image</a></li><li class="chapter-item expanded "><a href="esp32.html"><strong aria-hidden="true">1.4.</strong> ESP32 Peripheral</a></li><li class="chapter-item expanded "><a href="server.html"><strong aria-hidden="true">1.5.</strong> Server Setup</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hub.html"><strong aria-hidden="true">1.1.</strong> Hub Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User token & OS image</a></li><li class="chapter-item expanded "><a href="esp32.html"><strong aria-hidden="true">1.3.</strong> ESP32 Peripheral</a></li><li class="chapter-item expanded "><a href="server.html"><strong aria-hidden="true">1.4.</strong> Web Server</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -174,10 +174,19 @@ after verifying the identity of the hub.</li>
 </ul>
 </li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="preparation"><a class="header" href="#preparation">Preparation</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="u-boot-image"><a class="header" href="#u-boot-image">U-Boot image</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hub-image"><a class="header" href="#hub-image">Hub Image</a></h1>
+<p>Hub images can be downloaded at the following addresses.</p>
+<p>TODO: Build and upload images, add links</p>
+<ul>
+<li>RockPro64</li>
+<li>iMX8MQ</li>
+<li>QEMU (for artifact evaluation without hardware)</li>
+</ul>
+<p>For hardware based evaluation,
+an SSD and eMMC card are required in addition to the board.
+Upload the downloaded image to the eMMC card with a disk flashing tool
+(e.g., Etcher, dd). <a href="https://wiki.radxa.com/Rockpi4/install/eMMC">Example</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="user-token"><a class="header" href="#user-token">User Token</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-os-image"><a class="header" href="#linux-os-image">Linux OS image</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="esp32-peripheral"><a class="header" href="#esp32-peripheral">ESP32 Peripheral</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testing"><a class="header" href="#testing">Testing</a></h1>
