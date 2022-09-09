@@ -145,7 +145,34 @@
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>This repository contains artifact evaluation guide for
 ACSAC'22 submission
-<strong>&quot;SPACELORD: Private and Secure Smart Space Sharing&quot;</strong>.</p>
+<em>SPACELORD: Private and Secure Smart Space Sharing</em>.</p>
+<p>The Spacelord artifact submission consists of four components:</p>
+<ol>
+<li>Hub image
+<ul>
+<li>This is a disk image uploaded to the board.
+It contains Spacelord bootloader, image downloader,
+and the signature generator.</li>
+</ul>
+</li>
+<li>User token and OS image
+<ul>
+<li>User token communicates with Spacelord bootloader to upload user image
+after verifying the identity of the hub.</li>
+<li>We provide reference implementation of user token as a Linux userspace program.</li>
+</ul>
+</li>
+<li>Peripheral image
+<ul>
+<li>Reference implementation of Spacelord protocol on ESP32-based camera device.</li>
+</ul>
+</li>
+<li>Web server
+<ul>
+<li>A web server that stores encrypted user files.</li>
+</ul>
+</li>
+</ol>
 
                     </main>
 
