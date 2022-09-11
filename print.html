@@ -174,6 +174,7 @@ after verifying the identity of the hub.</li>
 </ul>
 </li>
 </ol>
+<p>TODO: Mention paper's chapters where possible</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hub-image"><a class="header" href="#hub-image">Hub Image</a></h1>
 <p>Hub images can be downloaded at the following addresses.</p>
 <p>TODO: Build and upload images, add links</p>
@@ -204,6 +205,55 @@ These files are used to mount user layer of Sledgehammer image.</p>
 <h2 id="functionality-testing"><a class="header" href="#functionality-testing">Functionality Testing</a></h2>
 <p>Make sure you have downloaded artifacts listed in the <a href="/introduction.html">Introduction</a>.</p>
 <p>TODO: provide downloader script</p>
+<ol>
+<li>Boot the board
+<ul>
+<li>Connect the board to the ethernet and turn it on.
+The board will boot into the hub manager
+and print a message:
+<code>Please connect to &lt;your_ip&gt;</code></li>
+<li>For QEMU-based testing,
+use script XXX.
+TODO: provide QEMU launch script.</li>
+</ul>
+</li>
+<li>Run user token
+<ul>
+<li>Run user token with the following command:
+<code>./token &lt;printed_ip&gt; &lt;expected_os_image&gt;</code></li>
+<li>User token reads configuration from <code>config.toml</code> file.
+TODO: Should we ask reviewers to run their own server?</li>
+<li>The token program connects to the hub manager
+(port number 15758)
+and informs it where it can download the base image (system + hardware layer).
+It also chooses a nonce for this session.
+<ul>
+<li>This configuration comes from <code>IMAGE_SERVER_URL</code> field.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Authenticated boot
+<ul>
+<li>The hub manager downloads the base image and reboots into the bootloader.
+The bootloader calculates the hash of the downloaded image
+and generates a certificate based on the measurement result and the nonce.</li>
+<li>Concurrently, the token program calculates the expected hash.</li>
+<li>When the both parts finishes their work,
+the board boots into the device image and runs the agent application
+that performs authenticated key exchange with the user token.
+The reference implementation uses TLS handshake with client auth (port number 15759).</li>
+<li>If the authentication succeeds,
+the user token sends user credentials that are necessary to mount the user layer.</li>
+</ul>
+</li>
+<li>User layer mount
+<ul>
+<li>As the last step, the user layer is mounted and the board is ready to be used.</li>
+</ul>
+</li>
+</ol>
+<p>TODO: Config migration - @Marcus?</p>
 <h2 id="performance-testing"><a class="header" href="#performance-testing">Performance Testing</a></h2>
 <p>TODO: @Sabartha</p>
 
