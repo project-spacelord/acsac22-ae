@@ -18,3 +18,5 @@ The Spacelord artifact submission consists of four components:
     * Reference implementation of Spacelord protocol on ESP32-based camera device.
 4. Web server
     * A web server that stores encrypted user files.
+
+TODO: Mention paper's chapters where possible
