@@ -142,7 +142,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="esp32-peripheral"><a class="header" href="#esp32-peripheral">ESP32 Peripheral</a></h1>
+                        <h1 id="spacelord-peripheral-devices"><a class="header" href="#spacelord-peripheral-devices">Spacelord peripheral devices</a></h1>
+<p>A prototype implementation of Spacelord peripheral device that targets ESP-EYE board
+can be downloaded at <code>peripheral</code> directory.</p>
+<ul>
+<li><code>peripheral/secure-hub-peripheral.elf</code></li>
+<li><code>peripheral/bootloader.bin</code></li>
+<li><code>peripheral/partition-table.bin</code></li>
+</ul>
+<p>Please check &quot;Build the Project&quot; section in Esperiff documentation
+to see how to flash these files to the board.</p>
+<ul>
+<li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#build-the-project">Linux and macOS</a></li>
+<li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html#build-the-project">Windows</a></li>
+</ul>
+<p>The board communicates with the board through Wi-Fi,
+and the prototype used hardcoded Wi-Fi SSID and password.
+Please test in the environment where a Wi-Fi with SSID &quot;myssid&quot; and password &quot;mypassword&quot; (without quote, WPA2).
+Alternatively, we can provide a binary with alternative SSID/PW upon a reviewer's request.</p>
+<p>TODO: check if this is correct SSID/PW</p>
+<h2 id="minimal-hub-implementation"><a class="header" href="#minimal-hub-implementation">Minimal hub implementation</a></h2>
+<p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
+Both side (the hub and the peripheral) must use TLS client authentication to verify the identity of each other.
+To reduce the hassle of setting up a patched OpenHAB,
+we provide an x86 CLI program written in Rust that performs the Sledgehammer TLS authentication.
+Download it at <code>peripheral/hub</code>,
+add an executable bit to it,
+and run it as <code>./hub &lt;peripheral_ip&gt;</code>.</p>
 
                     </main>
 
