@@ -146,37 +146,32 @@
 <p>This repository contains artifact evaluation guide for
 ACSAC'22 submission
 <em>SPACELORD: Private and Secure Smart Space Sharing</em>.</p>
-<p>The Spacelord artifact submission consists of four components:</p>
+<p>The Spacelord artifacts can be broadly separated into four categories:</p>
 <ol>
-<li>Hub image
+<li>Hub image (4.3)
 <ul>
 <li>This is a disk image uploaded to the board.
 It contains Spacelord bootloader, image downloader,
 and the signature generator.</li>
 </ul>
 </li>
-<li>User token and OS image
+<li>User token and OS image (4.2, 4.4, 4.5)
 <ul>
 <li>User token communicates with Spacelord bootloader to upload user image
 after verifying the identity of the hub.</li>
 <li>We provide reference implementation of user token as a Linux userspace program.</li>
 </ul>
 </li>
-<li>Peripheral image
+<li>Peripheral image (4.6)
 <ul>
 <li>Reference implementation of Spacelord protocol on ESP32-based camera device.</li>
 </ul>
 </li>
-<li>Web server
-<ul>
-<li>A web server that stores encrypted user files.</li>
-</ul>
-</li>
+<li>Image and storage server</li>
 </ol>
 <p>All artifacts can be downloaded at this <a href="https://1drv.ms/u/s!Apa8Zxdex5yci51ALONC_FURN_GnNw?e=No9NnK">OneDrive link</a>.</p>
 <p><em>Note:</em> &quot;Sledgehammer&quot; is the old codename for this project and may appear in some of the artifacts.</p>
 <p>TODO: make this link read-only</p>
-<p>TODO: mention paper chapters for each component</p>
 
                     </main>
 
