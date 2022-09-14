@@ -2,7 +2,7 @@
 
 ## Spacelord authorized boot testing
 
-Make sure to download artifacts listed in the [Introduction](/introduction.html)
+Make sure to download artifacts listed in the [introduction page](introduction.md)
 based on your hardware requirement.
 
 ### Preconfiguration
@@ -13,7 +13,7 @@ based on your hardware requirement.
 [Python SimpleHTTPServer](https://www.digitalocean.com/community/tutorials/python-simplehttpserver-http-server))
       at the location where lz4 compressed user images are stored.
 2. Run the storage server
-    * Follow the guide in the [server page](/server.html)
+    * Follow the guide in the [server setup guide page](server.md)
       to run the storage server in QEMU.
 3. Edit `config.toml` based on the location of the image server and the web server.
     `server.IMAGE_SERVER_URL` should point to the image server including the protocol and the port number
@@ -66,6 +66,12 @@ based on your hardware requirement.
     * When everything is done, the Linux-based user OS image will launch.
 
 ## Peripheral testing
+
+1. Setup ESP-EYE device based on the instruction at [peripheral setup guide](peripheral.md).
+2. Run the sample hub binary
+    * `./hub <peripheral_ip>`
+    * The hub binary prints CLI menu that can interact with the peripheral.
+      Internally, both side use TLS client authentication to ensure their identity.
 
 ## Performance testing
 

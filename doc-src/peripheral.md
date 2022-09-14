@@ -26,3 +26,6 @@ The above camera implementation is intended to communicate with OpenHAB hub soft
 Both side (the hub and the peripheral) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
 we provide a CLI program written in Rust that performs the Sledgehammer TLS authentication.
+
+- Use `peripheral/hub-x86` to perform peripheral test on a laptop
+- Use `peripheral/hub-aarch64` to perform peripheral test with a Spacelord board
