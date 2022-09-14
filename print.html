@@ -239,6 +239,17 @@ Download it at <code>peripheral/hub</code>,
 add an executable bit to it,
 and run it as <code>./hub &lt;peripheral_ip&gt;</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
+<p>Spacelord hub device communicates with an image server and the storage server.
+The storage server can be any HTTP server
+(e.g., <a href="https://github.com/joseluisq/static-web-server">static-web-server</a>,
+<a href="https://www.digitalocean.com/community/tutorials/python-simplehttpserver-http-server">Python SimpleHTTPServer</a>)
+that can serve static files.
+The serving location should be
+where <code>.lz4</code> compressed user images are.</p>
+<p>Spacelord's storage encryption currently relies on iSCSI and WireGuard.
+We provide a qcow virtual disk image for the storage server.
+Download <code>storage-server/run-storage-server.sh</code> and <code>storage-server.qcow2.lz4</code>
+in the same directory and execute <code>run-storage-server.sh</code> to run the storage server.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testing"><a class="header" href="#testing">Testing</a></h1>
 <h2 id="functionality-testing"><a class="header" href="#functionality-testing">Functionality Testing</a></h2>
 <p>Make sure you have downloaded artifacts listed in the <a href="/introduction.html">Introduction</a>.</p>
