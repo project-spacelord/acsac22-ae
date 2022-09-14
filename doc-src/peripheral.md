@@ -25,7 +25,4 @@ TODO: check if this is correct SSID/PW
 The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
 Both side (the hub and the peripheral) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
-we provide an x86 CLI program written in Rust that performs the Sledgehammer TLS authentication.
-Download it at `peripheral/hub`,
-add an executable bit to it,
-and run it as `./hub <peripheral_ip>`.
+we provide a CLI program written in Rust that performs the Sledgehammer TLS authentication.
