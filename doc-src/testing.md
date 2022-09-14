@@ -21,8 +21,10 @@ based on your hardware requirement.
     `server.wireguard.ISCSI_TARGET_IP` should point to the IP
     where the storage server is running without the port number
     (e.g., `127.0.0.1`).
+    All the other settings are hardcoded in the provided storage server image,
+    so reviewers do not need to modify them (e.g., wireguard subnet IPs).
 4. Put `config.toml` at the same directory with `token` program.
-5. Flash the hub image to the board (or prepare QEMU image).
+5. Flash the hub image to the board or prepare the QEMU image.
 
 ### Sledgehammer boot testing
 
@@ -67,6 +69,6 @@ based on your hardware requirement.
 
 ## Performance testing
 
-## Performance Testing
-
-TODO: @Sabartha
+Download `eval-scripts/phoronix_install_script.sh` and `eval-scripts/phoronix_run_tests.sh`
+and upload them to the board after the board boots up.
+Run them in the provisioned board to reproduce the performance evaluation in section 6.1.
