@@ -168,6 +168,8 @@ to run the storage server in QEMU.</li>
 <code>server.wireguard.ISCSI_TARGET_IP</code> should point to the IP
 where the storage server is running without the port number
 (e.g., <code>127.0.0.1</code>).
+<code>WG_LISTEN_PORT_LOCAL</code> and <code>WG_LISTEN_PORT</code> (as well as <code>run-qemu.sh</code> and <code>run-storage-server.sh</code>)
+might have to be changed if the host machine uses these port numbers for other purposes.
 All the other settings are hardcoded in the provided storage server image,
 so reviewers do not need to modify them (e.g., wireguard subnet IPs).</li>
 <li>Put <code>config.toml</code> at the same directory with <code>token</code> program.</li>
