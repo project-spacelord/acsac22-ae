@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Web Server - Spacelord Artifact Evaluation</title>
+        <title>Image and storage server - Spacelord Artifact Evaluation</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hub.html"><strong aria-hidden="true">1.1.</strong> Hub Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User token & OS image</a></li><li class="chapter-item expanded "><a href="esp32.html"><strong aria-hidden="true">1.3.</strong> ESP32 Peripheral</a></li><li class="chapter-item expanded "><a href="server.html" class="active"><strong aria-hidden="true">1.4.</strong> Web Server</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hub.html"><strong aria-hidden="true">1.1.</strong> Hub Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User token & OS image</a></li><li class="chapter-item expanded "><a href="peripheral.html"><strong aria-hidden="true">1.3.</strong> Spacelord peripherals</a></li><li class="chapter-item expanded "><a href="server.html" class="active"><strong aria-hidden="true">1.4.</strong> Image and storage server</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,7 +150,7 @@ The storage server can be any HTTP server
 that can serve static files.
 The serving location should be
 where <code>.lz4</code> compressed user images are.</p>
-<p>Spacelord's storage encryption currently relies on iSCSI and WireGuard.
+<p>Spacelord's remote encrypted storage utilizes iSCSI and WireGuard.
 We provide a qcow virtual disk image for the storage server.
 Download <code>storage-server/run-storage-server.sh</code> and <code>storage-server.qcow2.lz4</code>
 in the same directory and execute <code>run-storage-server.sh</code> to run the storage server.</p>
@@ -159,7 +159,7 @@ in the same directory and execute <code>run-storage-server.sh</code> to run the 
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="esp32.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="peripheral.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -173,7 +173,7 @@ in the same directory and execute <code>run-storage-server.sh</code> to run the 
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="esp32.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="peripheral.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

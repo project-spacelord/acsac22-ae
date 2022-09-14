@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hub.html"><strong aria-hidden="true">1.1.</strong> Hub Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User token & OS image</a></li><li class="chapter-item expanded "><a href="esp32.html"><strong aria-hidden="true">1.3.</strong> ESP32 Peripheral</a></li><li class="chapter-item expanded "><a href="server.html"><strong aria-hidden="true">1.4.</strong> Web Server</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Preparation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hub.html"><strong aria-hidden="true">1.1.</strong> Hub Image</a></li><li class="chapter-item expanded "><a href="user-token.html"><strong aria-hidden="true">1.2.</strong> User token & OS image</a></li><li class="chapter-item expanded "><a href="peripheral.html"><strong aria-hidden="true">1.3.</strong> Spacelord peripherals</a></li><li class="chapter-item expanded "><a href="server.html"><strong aria-hidden="true">1.4.</strong> Image and storage server</a></li></ol></li><li class="chapter-item expanded "><a href="testing.html"><strong aria-hidden="true">2.</strong> Testing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -230,10 +230,7 @@ Alternatively, we can provide a binary with alternative SSID/PW upon a reviewer'
 <p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
 Both side (the hub and the peripheral) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
-we provide an x86 CLI program written in Rust that performs the Sledgehammer TLS authentication.
-Download it at <code>peripheral/hub</code>,
-add an executable bit to it,
-and run it as <code>./hub &lt;peripheral_ip&gt;</code>.</p>
+we provide a CLI program written in Rust that performs the Sledgehammer TLS authentication.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
 <p>Spacelord hub device communicates with an image server and a storage server.
 The storage server can be any HTTP server
@@ -242,7 +239,7 @@ The storage server can be any HTTP server
 that can serve static files.
 The serving location should be
 where <code>.lz4</code> compressed user images are.</p>
-<p>Spacelord's storage encryption currently relies on iSCSI and WireGuard.
+<p>Spacelord's remote encrypted storage utilizes iSCSI and WireGuard.
 We provide a qcow virtual disk image for the storage server.
 Download <code>storage-server/run-storage-server.sh</code> and <code>storage-server.qcow2.lz4</code>
 in the same directory and execute <code>run-storage-server.sh</code> to run the storage server.</p>
