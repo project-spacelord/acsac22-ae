@@ -167,9 +167,11 @@ to run the storage server in QEMU.</li>
 (e.g., <code>http://localhost:8080/</code>).
 <code>server.wireguard.ISCSI_TARGET_IP</code> should point to the IP
 where the storage server is running without the port number
-(e.g., <code>127.0.0.1</code>).</li>
+(e.g., <code>127.0.0.1</code>).
+All the other settings are hardcoded in the provided storage server image,
+so reviewers do not need to modify them (e.g., wireguard subnet IPs).</li>
 <li>Put <code>config.toml</code> at the same directory with <code>token</code> program.</li>
-<li>Flash the hub image to the board (or prepare QEMU image).</li>
+<li>Flash the hub image to the board or prepare the QEMU image.</li>
 </ol>
 <h3 id="sledgehammer-boot-testing"><a class="header" href="#sledgehammer-boot-testing">Sledgehammer boot testing</a></h3>
 <ol>
@@ -224,8 +226,9 @@ the user token sends user credentials that are necessary to mount the user layer
 </ol>
 <h2 id="peripheral-testing"><a class="header" href="#peripheral-testing">Peripheral testing</a></h2>
 <h2 id="performance-testing"><a class="header" href="#performance-testing">Performance testing</a></h2>
-<h2 id="performance-testing-1"><a class="header" href="#performance-testing-1">Performance Testing</a></h2>
-<p>TODO: @Sabartha</p>
+<p>Download <code>eval-scripts/phoronix_install_script.sh</code> and <code>eval-scripts/phoronix_run_tests.sh</code>
+and upload them to the board after the board boots up.
+Run them in the provisioned board to reproduce the performance evaluation in section 6.1.</p>
 
                     </main>
 
