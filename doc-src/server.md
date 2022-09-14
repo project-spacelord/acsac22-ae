@@ -1,6 +1,6 @@
 # Server Setup
 
-Spacelord hub device communicates with an image server and the storage server.
+Spacelord hub device communicates with an image server and a storage server.
 The storage server can be any HTTP server
 (e.g., [static-web-server](https://github.com/joseluisq/static-web-server),
 [Python SimpleHTTPServer](https://www.digitalocean.com/community/tutorials/python-simplehttpserver-http-server))
