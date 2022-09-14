@@ -69,7 +69,7 @@ based on your hardware requirement.
 
 1. Setup ESP-EYE device based on the instruction at [peripheral setup guide](peripheral.md).
 2. Run the sample hub binary
-    * `./hub <peripheral_ip>`
+    * `./hub-x86_64 <peripheral_ip>` or `./hub-aarch64 <peripheral_ip>`
     * The hub binary prints CLI menu that can interact with the peripheral.
       Internally, both side use TLS client authentication to ensure their identity.
 
