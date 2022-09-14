@@ -19,4 +19,8 @@ The Spacelord artifact submission consists of four components:
 4. Web server
     * A web server that stores encrypted user files.
 
-TODO: Mention paper's chapters where possible
+Artifacts can be downloaded at this [OneDrive link](https://1drv.ms/u/s!Apa8Zxdex5yci51ALONC_FURN_GnNw?e=No9NnK).
+
+TODO: make this link read-only
+
+TODO: mention paper chapters for each component

@@ -1,14 +1,16 @@
 # Hub Image
 
-Hub images can be downloaded at the following addresses.
-
-TODO: Build and upload images, add links
-
-- RockPro64
-- iMX8MQ
-- QEMU (for artifact evaluation without hardware)
+- RockPro64: `hub-images/rockpro64-downloader.img`
+- iMX8MQ: `hub-images/imx8mq-evk-downloader.img`
+- QEMU (for artifact evaluation without hardware): `hub-images/qemu-downloader.img`
 
 For hardware based evaluation,
-an SSD and eMMC card are required in addition to the board.
-Upload the downloaded image to the eMMC card with a disk flashing tool
-(e.g., Etcher, dd). [Example](https://wiki.radxa.com/Rockpi4/install/eMMC).
+the target board, an NVME SSD, and an eMMC card are required.
+Download the corresponding hub image
+and upload the image to the eMMC card with a disk flashing tool
+(e.g., Etcher, dd - [example](https://wiki.radxa.com/Rockpi4/install/eMMC)).
+
+To minimize the hardware requirement,
+we disabled TPM requirement for RockPro64 hub image.
+TPM requirement do not affect the system performance
+because TPM is only used to store secret keys at the boot stage.
