@@ -18,8 +18,6 @@ The Spacelord artifacts can be broadly separated into four categories:
     * Reference implementation of Spacelord protocol on ESP32-based camera device.
 4. Image and storage server
 
-All artifacts can be downloaded at this [OneDrive link](https://1drv.ms/u/s!Apa8Zxdex5yci51ALONC_FURN_GnNw?e=No9NnK).
+All artifacts can be downloaded at this [OneDrive link](https://1drv.ms/u/s!Apa8Zxdex5yci51AXOjjKVZ6cbgTRA?e=3ec1mX).
 
 *Note:* "Sledgehammer" is the old codename for this project and may appear in some of the artifacts.
-
-TODO: make this link read-only

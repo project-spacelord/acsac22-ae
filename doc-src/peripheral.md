@@ -18,8 +18,6 @@ and the prototype used hardcoded Wi-Fi SSID and password.
 Please test in the environment where a Wi-Fi with SSID "myssid" and password "mypassword" (without quote, WPA2).
 Alternatively, we can provide a binary with alternative SSID/PW upon a reviewer's request.
 
-TODO: check if this is correct SSID/PW
-
 ## Minimal hub implementation
 
 The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
