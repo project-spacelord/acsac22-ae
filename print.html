@@ -237,7 +237,7 @@ we provide a CLI program written in Rust that performs the Sledgehammer TLS auth
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
 <p>Spacelord hub device communicates with an image server and a storage server.
-The storage server can be any HTTP server
+The image server can be any HTTP server
 (e.g., <a href="https://github.com/joseluisq/static-web-server">static-web-server</a>,
 <a href="https://www.digitalocean.com/community/tutorials/python-simplehttpserver-http-server">Python SimpleHTTPServer</a>)
 that can serve static files.
@@ -247,6 +247,10 @@ where <code>.lz4</code> compressed user images are.</p>
 We provide a qcow virtual disk image for the storage server.
 Download <code>storage-server/run-storage-server.sh</code> and <code>storage-server.qcow2.lz4</code>
 in the same directory and execute <code>run-storage-server.sh</code> to run the storage server.</p>
+<p>Currently, <code>run-storage-server.sh</code> assumes that it can forward host port 51820
+to the storage server for WireGuard communication. If host port 51820 is
+reserved for other purposes, both <code>run-storage-server.sh (hostfwd)</code> and
+<code>config.toml (WG_LISTEN_PORT)</code> should be revised accordingly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testing"><a class="header" href="#testing">Testing</a></h1>
 <h2 id="spacelord-authorized-boot-testing"><a class="header" href="#spacelord-authorized-boot-testing">Spacelord authorized boot testing</a></h2>
 <p>Make sure to download artifacts listed in the <a href="introduction.html">introduction page</a>
