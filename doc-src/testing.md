@@ -21,6 +21,8 @@ based on your hardware requirement.
     `server.wireguard.ISCSI_TARGET_IP` should point to the IP
     where the storage server is running without the port number
     (e.g., `127.0.0.1`).
+    `WG_LISTEN_PORT_LOCAL` and `WG_LISTEN_PORT` (as well as `run-qemu.sh` and `run-storage-server.sh`)
+    might have to be changed if the host machine uses these port numbers for other purposes.
     All the other settings are hardcoded in the provided storage server image,
     so reviewers do not need to modify them (e.g., wireguard subnet IPs).
 4. Put `config.toml` at the same directory with `token` program.
