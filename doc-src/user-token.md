@@ -20,4 +20,4 @@ Decompress the downloaded image **and keep the original `.lz4` file**.
 
 - RockPro64: `os-images/rockPro64-user.img.lz4`
 - iMX8MQ: `os-images/imx8mq-evk-user.img.lz4`
-- QEMU (for artifact evaluation without hardware): `hub_images/qemu-user.img.lz4`
+- QEMU (for artifact evaluation without hardware): `qemu-testing/qemu-user.img.lz4`

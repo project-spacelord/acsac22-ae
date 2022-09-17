@@ -2,7 +2,7 @@
 
 - RockPro64: `hub-images/rockpro64-downloader.img`
 - iMX8MQ: `hub-images/imx8mq-evk-downloader.img`
-- QEMU (for artifact evaluation without hardware): `hub-images/qemu-downloader.img` and `run-qemu.sh`.
+- QEMU (for artifact evaluation without hardware): `qemu-testing/qemu-downloader.img` and `qemu-testing/run-qemu.sh`.
 
 For hardware based evaluation,
 the target board, an NVME SSD, and an eMMC card are required.
