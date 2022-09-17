@@ -32,8 +32,9 @@ based on your hardware requirement.
 
 1. Turn on the hub board
     * Connect the board to the ethernet and turn it on.
-    * For QEMU-based testing, use `run-qemu.sh` script.
-      The board will boot into the hub manager
+      For QEMU-based testing, use `run-qemu.sh` script.
+        * We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.
+    * The board will boot into the hub manager
       and print a message:
       `Please connect to <your_ip>`.
       Remember this IP address.
