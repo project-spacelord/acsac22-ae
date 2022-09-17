@@ -180,15 +180,15 @@ so reviewers do not need to modify them (e.g., wireguard subnet IPs).</li>
 <li>Turn on the hub board
 <ul>
 <li>Connect the board to the ethernet and turn it on.
-For QEMU-based testing, use <code>run-qemu.sh</code> script.
-<ul>
-<li>We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.</li>
-</ul>
-</li>
-<li>The board will boot into the hub manager
+The board will boot into the hub manager
 and print a message:
 <code>Please connect to &lt;your_ip&gt;</code>.
 Remember this IP address.</li>
+<li>For QEMU-based testing, use <code>run-qemu.sh</code> script.
+The provided script forward internal ports outside,
+so use the host's IP number instead of the printed one
+in the following steps.
+* We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.</li>
 </ul>
 </li>
 <li>Run user token program
