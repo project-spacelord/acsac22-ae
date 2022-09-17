@@ -32,12 +32,15 @@ based on your hardware requirement.
 
 1. Turn on the hub board
     * Connect the board to the ethernet and turn it on.
-      For QEMU-based testing, use `run-qemu.sh` script.
-        * We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.
-    * The board will boot into the hub manager
+      The board will boot into the hub manager
       and print a message:
       `Please connect to <your_ip>`.
       Remember this IP address.
+    * For QEMU-based testing, use `run-qemu.sh` script.
+      The provided script forward internal ports outside,
+      so use the host's IP number instead of the printed one
+      in the following steps.
+          * We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.
 2. Run user token program
     * Run user token with the following command:
       `./token <hub_ip> <os_image>`.
