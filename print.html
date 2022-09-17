@@ -286,9 +286,13 @@ so reviewers do not need to modify them (e.g., wireguard subnet IPs).</li>
 <ol>
 <li>Turn on the hub board
 <ul>
-<li>Connect the board to the ethernet and turn it on.</li>
-<li>For QEMU-based testing, use <code>run-qemu.sh</code> script.
-The board will boot into the hub manager
+<li>Connect the board to the ethernet and turn it on.
+For QEMU-based testing, use <code>run-qemu.sh</code> script.
+<ul>
+<li>We used Ubuntu 20.04 server and qemu-system-aarch64 2.11.1 during testing.</li>
+</ul>
+</li>
+<li>The board will boot into the hub manager
 and print a message:
 <code>Please connect to &lt;your_ip&gt;</code>.
 Remember this IP address.</li>
