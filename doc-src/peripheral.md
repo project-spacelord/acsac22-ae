@@ -1,6 +1,6 @@
 # Spacelord peripheral devices
 
-A prototype implementation of a Spacelord peripheral device that targets [ESP-EYE](https://www.espressif.com/en/products/devkits/esp-eye/overview) board
+A prototype implementation of a Spacelord peripheral device that targets the [ESP-EYE](https://www.espressif.com/en/products/devkits/esp-eye/overview) board
 can be downloaded from the `peripheral` directory.
 
 - `peripheral/secure-hub-peripheral.elf`
@@ -29,7 +29,7 @@ Next, you need to look up the ESP32 board's IP address. This can be done through
 
 ## Minimal hub implementation
 
-The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
+The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS (REST).
 Both sides (the hub and the ESP32 board) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
 we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.
@@ -39,6 +39,6 @@ we provide a Linux CLI program written in Rust that performs the Sledgehammer TL
 
 With the ESP32 board powered up, run this hub program as follows:
 
-> hub-x86_64 <IP address of ESP32 board>
+> hub-x86_64 `IP address of ESP32 board'
 
 Next, a command-line menu should appear that allows you to control the sensor (i.e., camera) and actuator (i.e., LED) of the ESP32 board.
