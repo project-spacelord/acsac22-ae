@@ -207,7 +207,7 @@ Decompress the downloaded image <strong>and keep the original <code>.lz4</code> 
 <li>QEMU (for artifact evaluation without hardware): <code>qemu-testing/qemu-user.img.lz4</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="spacelord-peripheral-devices"><a class="header" href="#spacelord-peripheral-devices">Spacelord peripheral devices</a></h1>
-<p>A prototype implementation of a Spacelord peripheral device that targets <a href="https://www.espressif.com/en/products/devkits/esp-eye/overview">ESP-EYE</a> board
+<p>A prototype implementation of a Spacelord peripheral device that targets the <a href="https://www.espressif.com/en/products/devkits/esp-eye/overview">ESP-EYE</a> board
 can be downloaded from the <code>peripheral</code> directory.</p>
 <ul>
 <li><code>peripheral/secure-hub-peripheral.elf</code></li>
@@ -231,7 +231,7 @@ can be downloaded from the <code>peripheral</code> directory.</p>
 <p>The hub communicates with the board through Wi-Fi, and the prototype uses hardcoded Wi-Fi SSID and password. You will need to set up a Wi-Fi router or other acceess point with SSID &quot;myssid&quot; and WPA2 password &quot;mypassword&quot; (without quotes). The ESP32 board should automatically connect after being powered on. Alternatively, we can provide a binary with alternative SSID/PW upon request.</p>
 <p>Next, you need to look up the ESP32 board's IP address. This can be done throught the control menu of your Wi-Fi router (or other access point) or by plugging the ESP32 board into a computer and running a serial port console on the bord's serial port with baud rate 115200. After resetting the device, it should produce a considerable amount of debugging output through the serial port. The IP address should appear toward the end.</p>
 <h2 id="minimal-hub-implementation"><a class="header" href="#minimal-hub-implementation">Minimal hub implementation</a></h2>
-<p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
+<p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS (REST).
 Both sides (the hub and the ESP32 board) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
 we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.</p>
@@ -241,7 +241,7 @@ we provide a Linux CLI program written in Rust that performs the Sledgehammer TL
 </ul>
 <p>With the ESP32 board powered up, run this hub program as follows:</p>
 <blockquote>
-<p>hub-x86_64 <IP address of ESP32 board></p>
+<p>hub-x86_64 `IP address of ESP32 board'</p>
 </blockquote>
 <p>Next, a command-line menu should appear that allows you to control the sensor (i.e., camera) and actuator (i.e., LED) of the ESP32 board.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
