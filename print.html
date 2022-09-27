@@ -207,32 +207,43 @@ Decompress the downloaded image <strong>and keep the original <code>.lz4</code> 
 <li>QEMU (for artifact evaluation without hardware): <code>qemu-testing/qemu-user.img.lz4</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="spacelord-peripheral-devices"><a class="header" href="#spacelord-peripheral-devices">Spacelord peripheral devices</a></h1>
-<p>A prototype implementation of Spacelord peripheral device that targets ESP-EYE board
-can be downloaded at <code>peripheral</code> directory.</p>
+<p>A prototype implementation of Spacelord peripheral device that targets <a href="https://www.espressif.com/en/products/devkits/esp-eye/overview">ESP-EYE</a> board
+can be downloaded from the <code>peripheral</code> directory.</p>
 <ul>
 <li><code>peripheral/secure-hub-peripheral.elf</code></li>
 <li><code>peripheral/bootloader.bin</code></li>
 <li><code>peripheral/partition-table.bin</code></li>
 </ul>
-<p>Please check &quot;Build the Project&quot; section in Esperiff documentation
-to see how to flash these files to the board.</p>
+<p>Please install the Espressif ESP-IDF and tools following the instructions from these links.</p>
 <ul>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#build-the-project">Linux and macOS</a></li>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html#build-the-project">Windows</a></li>
 </ul>
-<p>The board communicates with the board through Wi-Fi,
-and the prototype used hardcoded Wi-Fi SSID and password.
-Please test in the environment where a Wi-Fi with SSID &quot;myssid&quot; and password &quot;mypassword&quot; (without quote, WPA2).
-Alternatively, we can provide a binary with alternative SSID/PW upon a reviewer's request.</p>
+<p>Connect the ESP32 board to the test computer via USB cable. This should produce a serial port on the test machine. Find out the name of the serial port based on your operating system. For example, on Windows, the ESP32 board should appear in Device Manager under `Ports (COM &amp; LPT)' as a COM port. On Linux, it should appear under /dev/ttyUSB*. With the three .bin files from the OneDrive peripheral directory in the same directory as the command line, run </p>
+<blockquote>
+<p>python <Espressif-path>\frameworks\esp-idf-v5.0\components\esptool_py\esptool\esptool.py -p <ESP32 serial port> -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size 2MB --flash_freq 80m 0x1000 bootloader.bin 0x8000 partition-table.bin 0x10000 secure-hub-peripheral.bin</p>
+</blockquote>
+<p>For example, on my Windows test machine, I used the following line:</p>
+<blockquote>
+<p>python C:\Espressif\frameworks\esp-idf-v5.0\components\esptool_py\esptool\esptool.py -p COM8 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size 2MB --flash_freq 80m 0x1000 bootloader.bin 0x8000 partition-table.bin 0x10000 secure-hub-peripheral.bin</p>
+</blockquote>
+<p>This should produce screen output indicating that a new image is being flashed to the ESP32.</p>
+<p>The board communicates with the board through Wi-Fi, and the prototype uses hardcoded Wi-Fi SSID and password. You will need to set up a Wi-Fi router or other acceess point with  SSID &quot;myssid&quot; and password WPA2 &quot;mypassword&quot; (without quotes). The ESP32 board should automatically connect after being powered on. Alternatively, we can provide a binary with alternative SSID/PW upon request.</p>
+<p>Next, you need to look up the ESP32 board's IP address. This can be done throught the control menu of your Wi-Fi router (or other access point) or by plugging the ESP32 board into a computer and running a serial port console on the bord's serial port with baud rate 115200. After resetting the device, it should produce a considerable amount of debugging output through the serial port. The IP address should appear toward the end.</p>
 <h2 id="minimal-hub-implementation"><a class="header" href="#minimal-hub-implementation">Minimal hub implementation</a></h2>
 <p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS protocol (REST).
-Both side (the hub and the peripheral) must use TLS client authentication to verify the identity of each other.
+Both sides (the hub and the ESP32 board) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
-we provide a CLI program written in Rust that performs the Sledgehammer TLS authentication.</p>
+we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.</p>
 <ul>
 <li>Use <code>peripheral/hub-x86_64</code> to perform peripheral test on a laptop</li>
 <li>Use <code>peripheral/hub-aarch64</code> to perform peripheral test with a Spacelord board</li>
 </ul>
+<p>With the ESP32 board powered up, run this hub program as follows:</p>
+<blockquote>
+<p>hub-x86_64 <IP address of ESP32 board></p>
+</blockquote>
+<p>Next, a command-line menu should appear that allows you to control the sensor (i.e., camera) and actuator (i.e., LED) of the ESP32 board.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup"><a class="header" href="#server-setup">Server Setup</a></h1>
 <p>Spacelord hub device communicates with an image server and a storage server.
 The image server can be any HTTP server
