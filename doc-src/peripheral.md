@@ -1,6 +1,6 @@
 # Spacelord peripheral devices
 
-A prototype implementation of Spacelord peripheral device that targets [ESP-EYE](https://www.espressif.com/en/products/devkits/esp-eye/overview) board
+A prototype implementation of a Spacelord peripheral device that targets [ESP-EYE](https://www.espressif.com/en/products/devkits/esp-eye/overview) board
 can be downloaded from the `peripheral` directory.
 
 - `peripheral/secure-hub-peripheral.elf`
@@ -22,7 +22,7 @@ For example, on my Windows test machine, I used the following line:
 This should produce screen output indicating that a new image is being flashed to the ESP32.
 
 
-The board communicates with the board through Wi-Fi, and the prototype uses hardcoded Wi-Fi SSID and password. You will need to set up a Wi-Fi router or other acceess point with  SSID "myssid" and password WPA2 "mypassword" (without quotes). The ESP32 board should automatically connect after being powered on. Alternatively, we can provide a binary with alternative SSID/PW upon request.
+The hub communicates with the board through Wi-Fi, and the prototype uses hardcoded Wi-Fi SSID and password. You will need to set up a Wi-Fi router or other acceess point with SSID "myssid" and WPA2 password "mypassword" (without quotes). The ESP32 board should automatically connect after being powered on. Alternatively, we can provide a binary with alternative SSID/PW upon request.
 
 Next, you need to look up the ESP32 board's IP address. This can be done throught the control menu of your Wi-Fi router (or other access point) or by plugging the ESP32 board into a computer and running a serial port console on the bord's serial port with baud rate 115200. After resetting the device, it should produce a considerable amount of debugging output through the serial port. The IP address should appear toward the end.
 
@@ -34,8 +34,8 @@ Both sides (the hub and the ESP32 board) must use TLS client authentication to v
 To reduce the hassle of setting up a patched OpenHAB,
 we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.
 
-- Use `peripheral/hub-x86_64` to perform peripheral test on a laptop
-- Use `peripheral/hub-aarch64` to perform peripheral test with a Spacelord board
+- Use `peripheral/hub-x86_64` to perform peripheral tests on a laptop
+- Use `peripheral/hub-aarch64` to perform peripheral tests with a Spacelord board
 
 With the ESP32 board powered up, run this hub program as follows:
 
