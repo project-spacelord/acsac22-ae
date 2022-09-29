@@ -234,7 +234,7 @@ can be downloaded from the <code>peripheral</code> directory.</p>
 <p>The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS (REST).
 Both sides (the hub and the ESP32 board) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
-we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.</p>
+we provide a Linux CLI program written in Rust that performs the Spacelord TLS authentication.</p>
 <ul>
 <li>Use <code>peripheral/hub-x86_64</code> to perform peripheral tests on a laptop</li>
 <li>Use <code>peripheral/hub-aarch64</code> to perform peripheral tests with a Spacelord board</li>
@@ -297,7 +297,7 @@ so reviewers do not need to modify them (e.g., wireguard subnet IPs).
 <li>Put <code>config.toml</code> at the same directory with <code>token</code> program.</li>
 <li>Flash the hub image to the board or prepare the QEMU image.</li>
 </ol>
-<h3 id="sledgehammer-boot-testing"><a class="header" href="#sledgehammer-boot-testing">Sledgehammer boot testing</a></h3>
+<h3 id="spacelord-boot-testing"><a class="header" href="#spacelord-boot-testing">Spacelord boot testing</a></h3>
 <ol>
 <li>Turn on the hub board
 <ul>
