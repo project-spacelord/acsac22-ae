@@ -25,6 +25,7 @@ based on your hardware requirement.
     might have to be changed if the host machine uses these port numbers for other purposes.
     All the other settings are hardcoded in the provided storage server image,
     so reviewers do not need to modify them (e.g., wireguard subnet IPs).
+    * Inside QEMU, use `10.0.2.2` to connect to the host.
 4. Put `config.toml` at the same directory with `token` program.
 5. Flash the hub image to the board or prepare the QEMU image.
 
@@ -40,7 +41,9 @@ based on your hardware requirement.
       The provided script forward internal ports outside,
       so use the host's IP number instead of the printed one
       in the following steps.
-          * We used Ubuntu 18.04 server and qemu-system-aarch64 2.11.1 during testing.
+        * We used Ubuntu 18.04 server and qemu-system-aarch64 2.11.1 during testing.
+          Matching this version is important because different version of QEMU provides
+          different device tree files, and our authenticated booting verifies the device tree file.
 2. Run user token program
     * Run user token with the following command:
       `./token <hub_ip> <os_image>`.
@@ -61,6 +64,9 @@ based on your hardware requirement.
     * Concurrently, the token program calculates the expected hash of the user image.
       When the hashing is done, the token program waits in a loop
       and prints "Waiting for the authenticator..." message until the hub is ready.
+        * For QEMU testing, you might see repeated messages of "Error: io error: Connection reset by peer (os error 104)"
+          until the user image is fully loaded.
+          This is expected behavior, and it happens because how QEMU forwards connection to the guest OS.
     * When the both parts finish their work,
       the board boots into the user OS image and runs the agent application
       that performs authenticated key exchange with the user token.
