@@ -29,7 +29,7 @@ based on your hardware requirement.
 4. Put `config.toml` at the same directory with `token` program.
 5. Flash the hub image to the board or prepare the QEMU image.
 
-### Sledgehammer boot testing
+### Spacelord boot testing
 
 1. Turn on the hub board
     * Connect the board to the ethernet and turn it on.

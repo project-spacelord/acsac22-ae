@@ -32,7 +32,7 @@ Next, you need to look up the ESP32 board's IP address. This can be done through
 The above camera implementation is intended to communicate with OpenHAB hub software through HTTPS (REST).
 Both sides (the hub and the ESP32 board) must use TLS client authentication to verify the identity of each other.
 To reduce the hassle of setting up a patched OpenHAB,
-we provide a Linux CLI program written in Rust that performs the Sledgehammer TLS authentication.
+we provide a Linux CLI program written in Rust that performs the Spacelord TLS authentication.
 
 - Use `peripheral/hub-x86_64` to perform peripheral tests on a laptop
 - Use `peripheral/hub-aarch64` to perform peripheral tests with a Spacelord board
