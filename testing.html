@@ -171,7 +171,11 @@ where the storage server is running without the port number
 <code>WG_LISTEN_PORT_LOCAL</code> and <code>WG_LISTEN_PORT</code> (as well as <code>run-qemu.sh</code> and <code>run-storage-server.sh</code>)
 might have to be changed if the host machine uses these port numbers for other purposes.
 All the other settings are hardcoded in the provided storage server image,
-so reviewers do not need to modify them (e.g., wireguard subnet IPs).</li>
+so reviewers do not need to modify them (e.g., wireguard subnet IPs).
+<ul>
+<li>Inside QEMU, use <code>10.0.2.2</code> to connect to the host.</li>
+</ul>
+</li>
 <li>Put <code>config.toml</code> at the same directory with <code>token</code> program.</li>
 <li>Flash the hub image to the board or prepare the QEMU image.</li>
 </ol>
@@ -188,7 +192,12 @@ Remember this IP address.</li>
 The provided script forward internal ports outside,
 so use the host's IP number instead of the printed one
 in the following steps.
-* We used Ubuntu 18.04 server and qemu-system-aarch64 2.11.1 during testing.</li>
+<ul>
+<li>We used Ubuntu 18.04 server and qemu-system-aarch64 2.11.1 during testing.
+Matching this version is important because different version of QEMU provides
+different device tree files, and our authenticated booting verifies the device tree file.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Run user token program
@@ -214,7 +223,13 @@ the bootloader calculates the hash of the downloaded image
 and generates a certificate based on the measurement result and the nonce.</li>
 <li>Concurrently, the token program calculates the expected hash of the user image.
 When the hashing is done, the token program waits in a loop
-and prints &quot;Waiting for the authenticator...&quot; message until the hub is ready.</li>
+and prints &quot;Waiting for the authenticator...&quot; message until the hub is ready.
+<ul>
+<li>For QEMU testing, you might see repeated messages of &quot;Error: io error: Connection reset by peer (os error 104)&quot;
+until the user image is fully loaded.
+This is expected behavior, and it happens because how QEMU forwards connection to the guest OS.</li>
+</ul>
+</li>
 <li>When the both parts finish their work,
 the board boots into the user OS image and runs the agent application
 that performs authenticated key exchange with the user token.
